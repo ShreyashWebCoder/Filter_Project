@@ -457,7 +457,7 @@ const filterData =()=>{
         if(filterObj.color !== null){
             filterArr = filterArr.filter((product)=>(
                 // product.color[1] == filterObj.color
-                // product.color.some((color) => filterObj.color.includes(color))
+                
                product.color.find((colors)=>filterObj.color.includes(colors))
             ))
         }
@@ -483,11 +483,7 @@ const filterData =()=>{
         }
 
 
-        // if (filterObj.size !== null) {
-        //     filterArr = filterArr.filter((product) => {
-        //         return product.size.some((size) => filterObj.size.includes(size));
-        //     });
-        // }
+        
         
         set_Cards(filterArr)
         console.log(filterObj)
