@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filter Project</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <!-- Header  -->
+    <header>
+      <div class="container-fluid header">
+        <div class="container header-container">
+          <div class="logo"><span>My</span>Shop</div>
+          <button
+            class="filter-btn"
+            id="filter-btn"
+            onclick="filterController()"
+          >
+            Filter
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Card Section  -->
+    <div class="container-fluid card">
+      <div class="container card-container" id="card-container">
+
+        <!-- <div class="card-item">
+          <div class="card-img">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQiSaueWRDFGEyFwXYAQ-owMoFlN2fHvJCj7MU8LHl0YeyJfVvix0O9HfDAm5ISMgelpb3qkLRtM4lfcPWI4gXyYmiQA-9fu7gWMuKSdZp5nG6JtXq5auL3&usqp=CAE"
+              alt=""
+            />
+          </div>
+
+          <div class="card-info">
+            <p class="first-p">Sponsored</p>
+            <h3 class="card-name">RED TAPE</h3>
+            <p class="card-descr">Lorem ipsum dolor sit</p>
+            <h3 class="card-price">
+              &#8377; 1,499
+              <span class="strikeOut-price">&#8377;6,999</span>
+              <span class="discount-price">80% off </span>
+            </h3>
+            <button class="card-btn">Hot Deals</button>
+          </div>
+        </div> -->
+
+      </div>
+    </div>
+
+    <!-- filter section  -->
+    <div id="filter-section">
+      <h1>Filter Products</h1>
+      <input type="text" placeholder="Serach Shoes " id="filterSerach" onkeyup="setFilterObj('name',this.value)"/>
+
+      <h3>Select Price Range</h3>
+      <div id="filter-price">
+        <label for="">Min Price:</label>
+        <input type="number" name="minPrice" onkeyup="setFilterObj('minPrice',this.value)" />
+        <label for="">Max Price:</label>
+        <input type="number" onkeyup="setFilterObj('maxPrice',this.value)"/>
+      </div>
+
+      <h3>Select Brands</h3>
+      <div id="filter-brand">
+        <ul type="none">
+          <li>
+            Puma
+            <input type="radio" name="puma" onclick="setFilterObj('brand', 'PUMA')"/></li>
+          <li>
+            Sparks
+            <input type="radio" name="sparks" onclick="setFilterObj('brand','Sparks')" />
+          </li>
+          <li>
+            Nike
+            <input type="radio" name="nike" onclick="setFilterObj('brand','Nike')" />
+          </li>
+          <li>
+            Adidas
+            <input type="radio" name="adidas" onclick="setFilterObj('brand','Adidas')" />
+          </li>
+        </ul>
+      </div>
+
+      <h3>Select Color</h3>
+      <div id="filter-color">
+        <label for="">White </label>
+        <input type="checkbox" name="white" onchange="checkColor()"/>
+        <label for="">Red </label>
+        <input type="checkbox" name="red"  onchange="checkColor()"/>
+        <label for="">Green </label>
+        <input type="checkbox" name="green"  onchange="checkColor()"/>
+        <label for="">Black </label>
+        <input type="checkbox" name="black"  onchange="checkColor()"/>
+      </div>
+
+      <h3>Select Size</h3>
+      <div id="shoes-size">
+        <ul type="none">
+          <li>
+            6
+            <input type="radio" name="6" onclick="checkSize()" />
+          </li>
+          <li>
+            7
+            <input type="radio" name="7" onclick="checkSize()" />
+          </li>
+          <li>
+            8
+            <input type="radio" name="8" onclick="checkSize()" />
+          </li>
+          <li>
+            9
+            <input type="radio" name="9" onclick="checkSize()" />
+          </li>
+          <li>
+            10
+            <input type="radio" name="10" onclick="checkSize()" />
+          </li>
+        </ul>
+      </div>
+
+      <button class="filter-btn" id="filter-btn" onclick="filterData()">Filter Data</button>
+    </div>
+
+    <!-- <script src="./products.json"></script> -->
+    <script src="/script.js"></script>
+  </body>
+</html>
